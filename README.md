@@ -4,6 +4,8 @@ Sistema feito para restaurantes que desejam automatizar o atendimento aos client
 
 ## Quem faz
 
+Márcio Emmanuel Gonçalves
+
 ## Requisitos executados
 
 ## Links
