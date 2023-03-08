@@ -1,0 +1,129 @@
+
+###----------------------------------------C-L-I-E-N-T-E-S-------------------------------------------------
+
+### login cliente -------------------------------------------------------------------------------------------------
+POST http://localhost:3003/fastfood/users/login
+Content-Type: application/json
+
+{
+    "cpf":"00123456789",
+}
+
+### profile
+GET http://localhost:3003/fastfood/users/profile/f96aa308-8f87-4fb3-86e4-90441362c1e7
+Content-Type: application/json
+
+
+###todos os usuarios -------------------------------------------------------------------------------------------------
+GET http://localhost:3003/fastfood/users/show
+Content-Type: 'application/json'
+
+### Deletar usuario
+
+DELETE http://localhost:3003/fastfood/users/delete/f96aa308-8f87-4fb3-86e4-90441362c1e7
+Content-Type: 'application/json'
+
+###Criar usuarios -------------------------------------------------------------------------------------------------
+POST http://localhost:3003/fastfood/users/signup
+Content-Type: 'application/json'
+
+{
+    "name":"marcio",
+    "cpf":"12345678900",
+    "phone":"12345678909"
+}
+
+### mensagens do cliente
+
+GET http://localhost:3003/fastfood/users/messages/133d42bd-4bb4-412b-b307-43227ec5868a
+Content-Type: 'application/json'
+
+
+###----------------------------------------P-R-O-D-U-T-O-S-------------------------------------------------
+
+
+### todos os produtos -------------------------------------------------------------------------------------------------
+
+GET http://localhost:3003/fastfood/products/show
+Content-Type: 'application/json'
+
+### Adicionar Produtos -------------------------------------------------------------------------------------------------
+POST http://localhost:3003/fastfood/products/create
+Content-Type: application/json
+
+{
+    "name":"Energetico Monster",
+    "price":13,
+    "category":"drinks",
+    "photo":"https://a-static.mlcdn.com.br/1500x1500/bebida-energetica-monster-energy-green-473ml/madabar/aeb9b38aaa4d11ecace74201ac18506b/91e20b88236e791ddba0484ff9362fb5.jpeg"
+}
+
+
+
+###----------------------------------------P-E-D-I-D-O-S-------------------------------------------------
+
+
+
+### Todos os pedidos -------------------------------------------------------------------------------------------------
+GET http://localhost:3003/fastfood/order/show
+Content-Content-Type: 'application/json'
+
+### Novo Pedido -------------------------------------------------------------------------------------------------
+
+GET http://localhost:3003/fastfood/order/neworder/idClient/:idClient/idProduct/:idProduct
+Content-Type: application/json
+
+{
+    "idClient":"47f65eb3-1a21-4931-8d23-49bbf5848dfa",
+    "idProduct":"bce65234-9645-4a15-9ed5-51679d9c4c63"
+}
+
+### meus pedidos -------------------------------------------------------------------------------------------------
+GET http://localhost:3003/fastfood/order/myorders/133d42bd-4bb4-412b-b307-43227ec5868a
+Content-Type: application/json
+
+### -------------------------------------------------------------------------------------------------
+
+
+
+
+###----------------------------------------M-E-S-A-S-------------------------------------------------
+
+### Todas as mesas
+
+GET http://localhost:3003/fastfood/tables/showTables
+Content-Type: application/json
+
+### todas as mesas disponiveis
+GET http://localhost:3003/fastfood/tables/all
+Content-Type: application/json
+
+### Criar mesas
+POST http://localhost:3003/fastfood/tables/create
+Content-Type: application/json
+
+{
+    "tableName":"mesa-01"
+}
+
+### Escolher mesa
+GET http://localhost:3003/fastfood/tables/select/idClient/:idClient/idTable/idTable
+Content-Type: application/json
+
+### Desocupar mesa 
+GET http://localhost:3003/fastfood/tables/vacateTable/0db39011-f60f-48d5-a7d4-a0cad24b9739
+Content-Type: application/json
+
+###
+
+cf46c2a5-c9bc-407b-94a0-2880f6d1ce7f mesa 01
+
+###
+
+GET http://localhost:3003/fastfood/tables/clearTables
+Content-Type: application/json
+
+### delete table
+
+DELETE http://localhost:3003/fastfood/tables/delete/d6c8c74f-31c7-4bd3-84a9-5c3f35965223
+Content-Type: application/json
