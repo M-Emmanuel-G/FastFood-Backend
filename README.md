@@ -2,12 +2,16 @@
 
 Sistema feito para restaurantes que desejam automatizar o atendimento aos clientes.
 
-## Documentação render
+## Quem faz
 
-## Documentação postman
+## Requisitos executados
 
-## Conceitos e Tecnologias utilizadas
+## Links
 
-## Endpoints
+## Objetivo do projeto
 
-## Como rodar localmente o projeto
+## Acessando o projeto
+
+## Funcionalidades
+
+## Modelagem do banco de dados
