@@ -34,4 +34,12 @@ export class MessagesBusiness{
             throw new Error(error.message);
         }
     }
+
+    deleteMessage = async(id:string)=>{
+        try {
+            await this.messagesDatabase.deleteMessage(id)
+        } catch (error:any) {
+            throw new Error(error.message);
+        }
+    }
 }

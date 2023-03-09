@@ -8,3 +8,4 @@ const messagesController = new MessagesController()
 
 messagesRouter.post('/sendMessage/:idClient', messagesController.sendMessages)
 messagesRouter.get('/showMessages/:id',messagesController.getMessage)
+messagesRouter.delete('/delete/:id',messagesController.deleteMessage)
