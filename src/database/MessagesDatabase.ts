@@ -5,19 +5,33 @@ export class MessageDatabase extends BaseDatabase{
     
     sendMessages = async (newMessage:any)=>{
         try {
-            const {id, message, sender} = newMessage
+            const {id, idClient, message, date} = newMessage
 
             const result = await MessageDatabase.connection(this.TABLE_NAME)
                 .insert({
                     id,
                     message,
-                    sender
+                    fk_client: idClient,
+                    date
                 })
              
             return result    
 
         } catch (error:any) {
             throw new Error(error.message);
+        }
+    }
+
+    getMessage = async (id:string) =>{
+        try {
+            const result = await MessageDatabase.connection(this.TABLE_NAME)
+                .select()
+                .join('FF_Clients','FF_Messages.fk_client','=','FF_Clients.id')
+                .where({fk_client: id })
+             return result   
+        } catch (error:any) {
+            throw new Error(error.message);
+            
         }
     }
 }

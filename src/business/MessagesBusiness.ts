@@ -1,3 +1,4 @@
+import { DateNow } from '../services/Date';
 import { GenerateId } from '../services/GenerateId';
 import { MessageDatabase } from './../database/MessagesDatabase';
 export class MessagesBusiness{
@@ -5,19 +6,30 @@ export class MessagesBusiness{
 
     sendMessages = async (inputMessage:any)=>{
         try {
-            const {message, sender} = inputMessage
+            const {idClient, message} = inputMessage
 
             const id = GenerateId.newID()
+            const date = DateNow.new() 
 
             const newMessage = {
                 id,
                 message,
-                sender
+                idClient,
+                date 
             }
 
             const result = await this.messagesDatabase.sendMessages(newMessage)
-            return result    
+            return result   
 
+        } catch (error:any) {
+            throw new Error(error.message);
+        }
+    }
+
+    getMessage = async (id:string)=>{
+        try {
+            const result = await this.messagesDatabase.getMessage(id)
+            return result
         } catch (error:any) {
             throw new Error(error.message);
         }
