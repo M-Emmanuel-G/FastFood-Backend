@@ -13,7 +13,7 @@ export class MessagesController {
                 message
             }
 
-            const result = await this.messagesBusiness.sendMessages(newMessage)
+                await this.messagesBusiness.sendMessages(newMessage)
              
                 res.status(200).send({message:'Mensagem enviada com sucesso.'})
 
@@ -29,6 +29,16 @@ export class MessagesController {
             const result = await this.messagesBusiness.getMessage(id)
 
             res.status(200).send({message:'Mensagens recentes.', result})
+        } catch (error:any) {
+            res.status(400).send(error.message);
+        }
+    }
+
+    deleteMessage = async(req:Request, res:Response)=>{
+        try {
+            const {id} = req.params
+            await this.messagesBusiness.deleteMessage(id)
+            res.status(200).send({message:'Mensagem excluida.'})
         } catch (error:any) {
             res.status(400).send(error.message);
         }

@@ -34,4 +34,14 @@ export class MessageDatabase extends BaseDatabase{
             
         }
     }
+
+    deleteMessage = async(id:string)=>{
+        try {
+            await MessageDatabase.connection(this.TABLE_NAME)
+                .delete()
+                .where({id})
+        } catch (error:any) {
+            throw new Error(error.message);
+        }
+    }
 }
