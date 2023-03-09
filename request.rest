@@ -127,3 +127,17 @@ Content-Type: application/json
 
 DELETE http://localhost:3003/fastfood/tables/delete/d6c8c74f-31c7-4bd3-84a9-5c3f35965223
 Content-Type: application/json
+
+###    MENSAGENS
+
+GET http://localhost:3003/fastfood/messages/showMessages/133d42bd-4bb4-412b-b307-43227ec5868a
+Content-Type: application/json
+
+### enviar mensagens
+
+POST http://localhost:3003/fastfood/messages/sendMessage/133d42bd-4bb4-412b-b307-43227ec5868a
+Content-Type: application/json
+
+{
+    "message":" Pedido finalizado. Em instantes estará em sua mesa."
+}
