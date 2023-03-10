@@ -39,7 +39,7 @@ export class MessageDatabase extends BaseDatabase{
         try {
             await MessageDatabase.connection(this.TABLE_NAME)
                 .delete()
-                .where({id})
+                .where({idMessage: id})
         } catch (error:any) {
             throw new Error(error.message);
         }
